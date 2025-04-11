@@ -10,7 +10,7 @@ Option 1: Load Directly from GitHub
 
 You can source the latest version of the functions directly into R:
 
-```source("https://raw.githubusercontent.com/alandhyc/GIS_housekeeping/main/LiDAR_metrics.R")```
+```source("https://raw.githubusercontent.com/alandhyc/LiDAR_metrics/main/LiDAR_metrics.R")```
 
 Option 2: Clone the Repository
 
