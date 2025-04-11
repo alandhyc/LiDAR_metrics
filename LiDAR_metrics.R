@@ -186,7 +186,8 @@ LiDAR_metrics<-function(las,
       need_buffer = T
     )
     
-      res<-catalog_map(las = las,
+      res<-catalog_map(las,
+                       LiDAR_metrics,
                        res = res,
                        h_cutoff = h_cutoff,
                        mcc_s = mcc_s,
