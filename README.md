@@ -22,6 +22,43 @@ Then, in R:
 
 ```source("path/to/functions.R")```
 
+# Example
+
+```
+#Basic info
+
+library(lidR)
+library(terra)
+library(dplyr)
+
+ncores<-13
+input_dir<-"C:/Point_Cloud"
+out_dir<-"C:/LiDAR_metrics"
+
+#Now apply LiDAR_metrics() function
+
+plan(multisession, workers = ncores)
+set_lidr_threads(ncores)
+
+ctg<-readLAScatalog(input_dir)
+
+opt_output_files(ctg)<-paste0(out_dir,"/{ORIGINALFILENAME}")
+opt_chunk_buffer(ctg)<-20
+
+ctg<-LiDAR_metrics(las = ctg,
+                   res=5,
+                   h_cutoff=1.3,
+                   mcc_s=1.5,
+                   mcc_t=0.3,
+                   zmax=35,
+                   cov_grid=0.25,
+                   shannon_cut=c(-1,2,5,10,15,35),
+                   vox_res=0.5,
+                   L1_range=c(0,1),
+                   L2_range=c(1,10),
+                   L3_range=c(10,35))
+```
+
 # License
 
 See the LICENSE file for details.
