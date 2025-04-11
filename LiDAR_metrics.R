@@ -186,19 +186,19 @@ LiDAR_metrics<-function(las,
       need_buffer = T
     )
     
-    res<-catalog_map(las,
-                     res,
-                     h_cutoff,
-                     mcc_s,
-                     mcc_t,
-                     zmax,
-                     cov_grid,
-                     shannon_cut,
-                     vox_res,
-                     L1_range,
-                     L2_range,
-                     L3_range,
-                     .options = options)
+      res<-catalog_map(las = las,
+                       res = res,
+                       h_cutoff = h_cutoff,
+                       mcc_s = mcc_s,
+                       mcc_t = mcc_t,
+                       zmax = zmax,
+                       cov_grid = cov_grid,
+                       shannon_cut = shannon_cut,
+                       vox_res = vox_res,
+                       L1_range = L1_range,
+                       L2_range = L2_range,
+                       L3_range = L3_range,
+                       .options = options)
     
   } #End of is(las,"LAScatalog")
   
